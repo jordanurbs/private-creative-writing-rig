@@ -59,9 +59,41 @@ The writer can use these slash commands. When they do, follow the instructions i
 - `/project:image` -- generate an image using Venice
 - `/project:newproject` -- create a new writing project from a template
 
+## Sub-agents
+
+When running `/project:analyze`, delegate to these specialized agents in `.claude/agents/analysis/`:
+
+| Agent | File | Output |
+|-------|------|--------|
+| Character Analyst | `character-analyst.md` | `characters-analysis.md` |
+| Plot Analyst | `plot-analyst.md` | `plot-analysis.md` |
+| Theme Analyst | `theme-analyst.md` | `themes-analysis.md` |
+| Style Analyst | `style-analyst.md` | `style-guide.md` |
+| Setting Analyst | `setting-analyst.md` | `settings-analysis.md` |
+
+When running `/project:continue` or `/project:rewrite`, reference the agents in `.claude/agents/writing/`:
+
+| Agent | File | Purpose |
+|-------|------|---------|
+| Continuator | `continuator.md` | Continue writing in the author's voice |
+| Chapter Rewriter | `chapter-rewriter.md` | Rewrite a chapter with full context |
+
+## Skills
+
+| Skill | Location | Purpose |
+|-------|----------|---------|
+| Venice Media | `.claude/skills/venice-media/` | Image generation via Venice (Nano Banana Pro) |
+
 ## Workspace structure
 
 ```
+.claude/
+  commands/        -- slash command definitions
+  agents/
+    analysis/      -- character, plot, theme, style, setting analysts
+    writing/       -- continuator, chapter rewriter
+  skills/
+    venice-media/  -- image generation skill with scripts
 projects/          -- each subfolder is a writing project
   my-novel/
     chapters/      -- chapter files (01-chapter-one.md, etc.)
