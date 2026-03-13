@@ -1,0 +1,12 @@
+{
+  "name": "creative-writer-scripts",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Import/export tools for Creative Writer",
+  "dependencies": {
+    "docx": "^9.0.0",
+    "jszip": "^3.10.0",
+    "mammoth": "^1.8.0",
+    "pdfkit": "^0.15.0"
+  }
+}
