@@ -1,48 +1,40 @@
 ---
 name: venice-media
-description: Generate images using Venice API with Nano Banana Pro model for character portraits, scene illustrations, and mood boards.
-requires:
-  bins: ["python3"]
-  env: ["VENICE_API_KEY"]
+description: Generate images using Venice with Nano Banana Pro model. Use when the writer wants to visualize a character, scene, setting, or mood board. Triggers on requests like "generate an image", "draw", "illustrate", "visualize", or "picture of".
 ---
 
 # Venice Media — Image Generation
 
-Generate images to help visualize characters, settings, and scenes using Venice's Nano Banana Pro model.
+Generate images to help visualize characters, settings, and scenes.
 
-## Usage
+## How to Generate
+
+Run the script from the workspace root:
 
 ```bash
-python3 scripts/venice-image.py --prompt "DESCRIPTION" --out-dir PROJECT_IMAGES_DIR
+python3 scripts/venice-image.py --prompt "DESCRIPTION" --model nano-banana-pro --out-dir PROJECT_IMAGES_DIR
 ```
 
 ## Options
 
-- `--prompt` (required): Description of the image
-- `--model` (default: nano-banana-pro): Venice image model
-- `--out-dir` (default: current dir): Where to save the image
-- `--width` (default: 1024): Image width
-- `--height` (default: 1024): Image height
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--prompt` | (required) | Description of the image |
+| `--model` | `nano-banana-pro` | Venice image model |
+| `--out-dir` | `.` | Output directory |
+| `--width` | `1024` | Image width |
+| `--height` | `1024` | Image height |
 
-## Examples
+## Where to Save
 
-```bash
-# Character portrait
-python3 scripts/venice-image.py --prompt "a weathered sea captain with grey beard and kind eyes, oil painting style" --out-dir projects/my-novel/images
+- If the writer is working inside a project, save to `projects/<name>/images/`
+- Otherwise save to `notes/images/`
 
-# Scene illustration
-python3 scripts/venice-image.py --prompt "a fog-covered Victorian London street at midnight, gas lamps glowing" --out-dir projects/my-novel/images
-
-# Mood board
-python3 scripts/venice-image.py --prompt "abstract watercolor of loneliness and hope, blue and gold tones" --out-dir projects/my-novel/images
-```
-
-## Pricing
-
-~$0.01-0.03 per image.
+Create the directory if it does not exist.
 
 ## Notes
 
-- The script reads VENICE_API_KEY from the `.env` file in the workspace root
+- The script reads `VENICE_API_KEY` from the `.env` file in the workspace root
 - Images are saved as PNG with a descriptive filename
-- Safe mode is disabled by default (Venice is an uncensored platform)
+- Cost: ~$0.01-0.03 per image
+- Safe mode is disabled (Venice is uncensored)

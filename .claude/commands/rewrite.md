@@ -1,11 +1,16 @@
-Read the currently open chapter file. Rewrite it.
+---
+description: Rewrite the current chapter using full project analysis context
+argument-hint: instructions (e.g. "tighten pacing, sharpen dialogue")
+allowed-tools: Read, Write, Edit, Grep, Glob
+---
 
-Before rewriting, check the project folder for:
+Read the currently open chapter file. Before rewriting, check the project folder for context:
+
 - `style-guide.md` -- follow this voice exactly
 - `rewrite-plan.md` -- the writer's rewrite goals
-- `characters/` -- character profiles for consistency
+- `characters-analysis.md` -- character profiles
 - `plot-analysis.md` -- structural context
-- `themes-analysis.md` -- thematic elements to preserve
+- `themes-analysis.md` -- thematic elements
 
 Preserve the plot events, character actions, and story progression exactly. Improve the prose: tighten sentences, sharpen imagery, deepen emotional resonance, fix pacing, strengthen dialogue.
 

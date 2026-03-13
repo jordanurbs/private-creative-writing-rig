@@ -1,11 +1,19 @@
-Generate an image using Venice AI to help the writer visualize a scene, character, or setting.
+---
+description: Generate an image using Venice to visualize a scene, character, or setting
+argument-hint: description of the image
+allowed-tools: Bash, Read
+---
 
-Ask the writer what they want to see if they did not provide a description.
+Generate an image using Venice to help the writer visualize a scene, character, or setting.
 
-Then run: `python3 scripts/venice-image.py --prompt "<description>" --model nano-banana-pro --out-dir <project-images-dir>`
+If the writer did not provide a description, ask what they want to see.
 
-If the writer is working inside a project, save to that project's `images/` folder. Otherwise save to `notes/images/`.
+Determine the output directory:
+- If working inside a project, use that project's `images/` folder
+- Otherwise use `notes/images/`
 
-Tell the writer where the image was saved and offer to describe it in more detail or generate variations.
+Then run:
 
-Writer's description: $ARGUMENTS
+!`python3 scripts/venice-image.py --prompt "$ARGUMENTS" --model nano-banana-pro --out-dir <output-dir>`
+
+Tell the writer where the image was saved.

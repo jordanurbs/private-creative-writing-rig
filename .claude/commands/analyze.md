@@ -1,3 +1,8 @@
+---
+description: Run a full 5-pass novel analysis (characters, plot, themes, style, settings)
+allowed-tools: Read, Write, Grep, Glob, Bash
+---
+
 Run a full analysis of the novel/manuscript in the current project. Read ALL chapter files in order to understand the complete work.
 
 Perform 5 analysis passes and save each as a markdown file in the project folder:

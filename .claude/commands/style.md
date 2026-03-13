@@ -1,3 +1,8 @@
+---
+description: Analyze the writer's prose style and create a style guide the AI follows
+allowed-tools: Read, Write, Glob
+---
+
 Analyze the writing in the currently open file (or all chapter files if the writer asks for the whole project).
 
 Produce a style guide covering:

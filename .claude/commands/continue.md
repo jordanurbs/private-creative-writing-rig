@@ -1,9 +1,12 @@
-Read the currently open file. Continue writing from where it leaves off.
+---
+description: Continue writing from where the current file leaves off, matching voice and style
+allowed-tools: Read, Write, Grep, Glob
+---
 
-Match the voice, tense, point of view, and tone exactly. If a `style-guide.md` exists in the project folder, follow it closely.
+Read the currently open file. If a `style-guide.md` exists in the project folder, read it and follow it closely.
 
-Write the next few paragraphs naturally, as if the same author kept going. Do not repeat what is already written -- just pick up where it stops.
+Continue writing from where the text leaves off. Match the voice, tense, point of view, and tone exactly. Write the next few paragraphs naturally, as if the same author kept going. Do not repeat what is already written.
 
-If the writer provided instructions, follow them: $ARGUMENTS
+Writer's specific instructions: $ARGUMENTS
 
 Output only the new prose. No commentary or preamble.
