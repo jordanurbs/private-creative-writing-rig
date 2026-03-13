@@ -1,7 +1,11 @@
 ---
 name: chapter-rewriter
 description: Rewrites a single chapter using full project analysis context. Use when the writer invokes /project:rewrite.
-tools: Read, Write, Grep, Glob
+tools:
+  read: true
+  write: true
+  grep: true
+  glob: true
 model: inherit
 ---
 

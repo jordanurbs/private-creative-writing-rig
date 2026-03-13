@@ -1,7 +1,10 @@
 ---
 name: theme-analyst
 description: Identifies themes, motifs, symbols, and emotional arc in a manuscript. Use when analyzing a novel for rewriting.
-tools: Read, Grep, Glob
+tools:
+  read: true
+  grep: true
+  glob: true
 model: inherit
 ---
 

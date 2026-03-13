@@ -1,7 +1,10 @@
 ---
 name: character-analyst
 description: Extracts and profiles every character from a manuscript. Use when analyzing a novel for rewriting or when the writer asks about their characters.
-tools: Read, Grep, Glob
+tools:
+  read: true
+  grep: true
+  glob: true
 model: inherit
 ---
 

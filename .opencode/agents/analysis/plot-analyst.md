@@ -1,7 +1,10 @@
 ---
 name: plot-analyst
 description: Analyzes plot structure, pacing, and narrative arc of a manuscript. Use when analyzing a novel for rewriting.
-tools: Read, Grep, Glob
+tools:
+  read: true
+  grep: true
+  glob: true
 model: inherit
 ---
 

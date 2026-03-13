@@ -1,7 +1,9 @@
 ---
 name: continuator
 description: Continues writing from where the manuscript leaves off, matching the author's voice exactly. Use when the writer invokes /project:continue.
-tools: Read, Glob
+tools:
+  read: true
+  glob: true
 model: inherit
 ---
 

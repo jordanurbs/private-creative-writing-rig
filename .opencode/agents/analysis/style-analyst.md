@@ -1,7 +1,10 @@
 ---
 name: style-analyst
 description: Analyzes writing voice and produces a style guide for AI to follow when writing in the author's voice. Use when the writer wants to capture their style.
-tools: Read, Write, Glob
+tools:
+  read: true
+  write: true
+  glob: true
 model: inherit
 ---
 

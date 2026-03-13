@@ -1,7 +1,10 @@
 ---
 name: setting-analyst
 description: Extracts settings, locations, world-building details, and atmosphere from a manuscript. Use when analyzing a novel for rewriting.
-tools: Read, Grep, Glob
+tools:
+  read: true
+  grep: true
+  glob: true
 model: inherit
 ---
 
