@@ -56,7 +56,7 @@ The writer can use these slash commands. When they do, follow the instructions i
 - `/project:style` -- analyze the writer's style and create a style guide
 - `/project:import` -- import a .docx or .txt file into a project
 - `/project:export` -- export a project to .docx, .pdf, or .epub
-- `/project:image` -- generate an image using Venice AI
+- `/project:image` -- generate an image using Venice
 - `/project:newproject` -- create a new writing project from a template
 
 ## Workspace structure

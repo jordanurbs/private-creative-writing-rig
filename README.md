@@ -1,6 +1,6 @@
 # Creative Writer
 
-A private AI writing workspace. Write novels, short stories, essays, screenplays, poetry, or blog posts with an AI collaborator in your terminal -- powered by [Venice AI](https://venice.ai) for uncensored, private writing assistance.
+A private AI writing workspace. Write novels, short stories, essays, screenplays, poetry, or blog posts with an AI collaborator in your terminal -- powered by [Venice](https://venice.ai) for uncensored, private writing assistance.
 
 No subscriptions. No data harvesting. Your manuscripts stay on your machine. The AI runs through Venice, which does not train on your data.
 
@@ -8,7 +8,7 @@ No subscriptions. No data harvesting. Your manuscripts stay on your machine. The
 
 ## What You Get
 
-**A writing partner in your terminal.** Claude Code connects to Venice AI through a local router, giving you a private AI assistant that understands narrative structure, characters, pacing, and voice. It never refuses dark themes, mature content, or controversial subject matter -- fiction explores the full range of human experience.
+**A writing partner in your terminal.** Claude Code connects to Venice through a local router, giving you a private AI assistant that understands narrative structure, characters, pacing, and voice. It never refuses dark themes, mature content, or controversial subject matter -- fiction explores the full range of human experience.
 
 **12 slash commands** for everything a writer needs:
 
@@ -25,7 +25,7 @@ No subscriptions. No data harvesting. Your manuscripts stay on your machine. The
 | `/project:block` | Creative block helper |
 | `/project:import` | Import a .docx or .txt manuscript |
 | `/project:export` | Export to .docx, .pdf, or .epub |
-| `/project:image` | Generate an image via Venice AI (Nano Banana Pro) |
+| `/project:image` | Generate an image via Venice (Nano Banana Pro) |
 
 **Project templates** for novels, short stories, essays, screenplays, blogs, and poetry collections.
 
@@ -39,15 +39,15 @@ No subscriptions. No data harvesting. Your manuscripts stay on your machine. The
 
 - A computer (Mac, Windows, or Linux)
 - [Node.js](https://nodejs.org/) (v18 or higher)
-- A Venice AI account with API credits ([venice.ai](https://venice.ai))
+- A Venice account with API credits ([venice.ai](https://venice.ai))
 
 ### Step by step
 
 **1. Download this project**
 
 ```
-git clone https://github.com/jordanurbs/private-creative-writing.git
-cd private-creative-writing
+git clone https://github.com/jordanurbs/private-creative-writing-rig.git
+cd private-creative-writing-rig
 ```
 
 Or click "Code" > "Download ZIP" on GitHub and unzip it.
@@ -65,7 +65,7 @@ Or click "Code" > "Download ZIP" on GitHub and unzip it.
 ./scripts/setup.sh
 ```
 
-This installs Claude Code, the Claude Code Router, and configures it to use Venice AI with the `olafangensan-glm-4.7-flash-heretic` model. It will ask for your API key.
+This installs Claude Code, the Claude Code Router, and configures it to use Venice with the `olafangensan-glm-4.7-flash-heretic` model. It will ask for your API key.
 
 **4. Start writing**
 
@@ -88,7 +88,7 @@ Claude Code opens in your terminal. Type naturally to chat with your writing ass
 
 ### The AI
 
-Your writing assistant runs through [Claude Code](https://docs.anthropic.com/en/docs/claude-code), routed through Venice AI via [claude-code-router](https://github.com/musistudio/claude-code-router). The model (`olafangensan-glm-4.7-flash-heretic`) is uncensored, has a 128K token context window, and costs fractions of a cent per interaction.
+Your writing assistant runs through [Claude Code](https://docs.anthropic.com/en/docs/claude-code), routed through Venice via [claude-code-router](https://github.com/musistudio/claude-code-router). The model (`olafangensan-glm-4.7-flash-heretic`) is uncensored, has a 128K token context window, and costs fractions of a cent per interaction.
 
 ### Writing
 
@@ -106,14 +106,14 @@ If you have an existing manuscript that needs rewriting:
 
 ### Image generation
 
-`/project:image` generates images using Venice AI's Nano Banana Pro model. Describe a character, setting, or scene and get an illustration saved to your project.
+`/project:image` generates images using Venice's Nano Banana Pro model. Describe a character, setting, or scene and get an illustration saved to your project.
 
 ---
 
 ## Project Structure
 
 ```
-private-creative-writing/
+private-creative-writing-rig/
   CLAUDE.md              -- AI personality and behavior
   .claude/commands/      -- slash command definitions
   scripts/
@@ -144,7 +144,7 @@ projects/my-novel/
 
 ## Costs
 
-Venice AI is pay-per-use. The `olafangensan-glm-4.7-flash-heretic` model is extremely affordable:
+Venice is pay-per-use. The `olafangensan-glm-4.7-flash-heretic` model is extremely affordable:
 
 | Usage | Estimated cost |
 |-------|---------------|
@@ -167,7 +167,7 @@ Venice AI is pay-per-use. The `olafangensan-glm-4.7-flash-heretic` model is extr
 ## Privacy
 
 - Your manuscripts are local files that never leave your computer
-- Venice AI does not train on your data or store your conversations
+- Venice does not train on your data or store your conversations
 - The router runs locally on your machine
 - Your API key is stored in `.env` (gitignored)
 
@@ -185,4 +185,4 @@ Open source. MIT license. Contributions welcome.
 
 ## License
 
-MIT -- Copyright (c) 2026 Venice AI & Jordan Urbs
+MIT -- Copyright (c) 2026 Venice & Jordan Urbs

@@ -36,7 +36,6 @@
   "explorer.confirmDragAndDrop": false,
 
   "zenMode.hideLineNumbers": true,
-  "zenMode.hideTabs": true,
   "zenMode.hideStatusBar": false,
   "zenMode.centerLayout": true,
   "zenMode.fullScreen": false,
@@ -49,5 +48,6 @@
     },
     "editor.acceptSuggestionOnEnter": "off",
     "editor.wordBasedSuggestions": "off"
-  }
+  },
+  "zenMode.showTabs": "single"
 }
