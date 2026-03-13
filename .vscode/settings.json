@@ -21,6 +21,9 @@
   "editor.padding.top": 40,
   "editor.padding.bottom": 40,
 
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 13,
+
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": "single",
   "workbench.statusBar.visible": true,

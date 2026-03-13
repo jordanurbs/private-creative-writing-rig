@@ -2,7 +2,7 @@
 
 A private AI writing workspace. Write novels, short stories, essays, screenplays, poetry, or blog posts with an AI collaborator in your terminal -- powered by [Venice](https://venice.ai) for uncensored, private writing assistance.
 
-No subscriptions. No data harvesting. Your manuscripts stay on your machine. The AI runs through Venice, which does not train on your data.
+No subscripand ytions. No data harvesting. Your manuscripts stay on your machine. The AI runs through Venice, which does not train on your data.
 
 ---
 
