@@ -2,30 +2,30 @@
 
 A private AI writing workspace. Write novels, short stories, essays, screenplays, poetry, or blog posts with an AI collaborator in your terminal -- powered by [Venice](https://venice.ai) for uncensored, private writing assistance.
 
-No subscripand ytions. No data harvesting. Your manuscripts stay on your machine. The AI runs through Venice, which does not train on your data.
+No subscriptions. No data harvesting. Your manuscripts stay on your machine. The AI runs through Venice, which does not train on your data.
 
 ---
 
 ## What You Get
 
-**A writing partner in your terminal.** Claude Code connects to Venice through a local router, giving you a private AI assistant that understands narrative structure, characters, pacing, and voice. It never refuses dark themes, mature content, or controversial subject matter -- fiction explores the full range of human experience.
+**A writing partner in your terminal.** [OpenCode](https://opencode.ai) connects directly to Venice, giving you a private AI assistant that understands narrative structure, characters, pacing, and voice. It never refuses dark themes, mature content, or controversial subject matter -- fiction explores the full range of human experience.
 
 **12 slash commands** for everything a writer needs:
 
 | Command | What it does |
 |---------|-------------|
-| `/project:newproject` | Create a new project from a template |
-| `/project:continue` | AI continues writing where you left off, matching your voice |
-| `/project:rewrite` | Rewrite the current chapter with full story context |
-| `/project:analyze` | 5-pass novel analysis: characters, plot, themes, style, settings |
-| `/project:style` | Analyze your writing and generate a style guide the AI follows |
-| `/project:wordcount` | Word count, pages, reading time |
-| `/project:format` | Smart quotes, em dashes, clean spacing |
-| `/project:names` | Generate character or place names |
-| `/project:block` | Creative block helper |
-| `/project:import` | Import a .docx or .txt manuscript |
-| `/project:export` | Export to .docx, .pdf, or .epub |
-| `/project:image` | Generate an image via Venice (Nano Banana Pro) |
+| `/newproject` | Create a new project from a template |
+| `/continue` | AI continues writing where you left off, matching your voice |
+| `/rewrite` | Rewrite the current chapter with full story context |
+| `/analyze` | 5-pass novel analysis: characters, plot, themes, style, settings |
+| `/style` | Analyze your writing and generate a style guide the AI follows |
+| `/wordcount` | Word count, pages, reading time |
+| `/format` | Smart quotes, em dashes, clean spacing |
+| `/names` | Generate character or place names |
+| `/block` | Creative block helper |
+| `/import` | Import a .docx or .txt manuscript |
+| `/export` | Export to .docx, .pdf, or .epub |
+| `/image` | Generate an image via Venice (Nano Banana Pro) |
 
 **Project templates** for novels, short stories, essays, screenplays, blogs, and poetry collections.
 
@@ -65,22 +65,15 @@ Or click "Code" > "Download ZIP" on GitHub and unzip it.
 ./scripts/setup.sh
 ```
 
-This installs Claude Code, the Claude Code Router, and configures it to use Venice with the `olafangensan-glm-4.7-flash-heretic` model. It will ask for your API key.
+This installs OpenCode and asks for your Venice API key. No routers, no proxies -- OpenCode talks to Venice directly.
 
 **4. Start writing**
 
 ```
-ccr start
-ccr code
+opencode
 ```
 
-Or:
-
-```
-eval "$(ccr activate)" && claude
-```
-
-Claude Code opens in your terminal. Type naturally to chat with your writing assistant, or use any of the slash commands.
+OpenCode opens in your terminal. Type naturally to chat with your writing assistant, or use any of the slash commands.
 
 ---
 
@@ -88,7 +81,7 @@ Claude Code opens in your terminal. Type naturally to chat with your writing ass
 
 ### The AI
 
-Your writing assistant runs through [Claude Code](https://docs.anthropic.com/en/docs/claude-code), routed through Venice via [claude-code-router](https://github.com/musistudio/claude-code-router). The model (`olafangensan-glm-4.7-flash-heretic`) is uncensored, has a 128K token context window, and costs fractions of a cent per interaction.
+Your writing assistant runs through [OpenCode](https://opencode.ai), an open-source terminal AI agent. It connects directly to Venice's API using the `olafangensan-glm-4.7-flash-heretic` model -- uncensored, 128K token context window, fractions of a cent per interaction. No routers or proxies needed.
 
 ### Writing
 
@@ -98,15 +91,15 @@ Open this folder in VS Code or Cursor. The editor is pre-configured for prose: s
 
 If you have an existing manuscript that needs rewriting:
 
-1. `/project:import` to bring in your .docx file (auto-splits into chapters)
-2. `/project:analyze` to run 5 analysis passes (characters, plot, themes, style, settings)
+1. `/import` to bring in your .docx file (auto-splits into chapters)
+2. `/analyze` to run 5 analysis passes (characters, plot, themes, style, settings)
 3. Review the analysis files, fill in `rewrite-plan.md` with your goals
-4. `/project:rewrite` on each chapter -- the AI rewrites with full story context
+4. `/rewrite` on each chapter -- the AI rewrites with full story context
 5. Compare the rewrite side-by-side with the original
 
 ### Image generation
 
-`/project:image` generates images using Venice's Nano Banana Pro model. Describe a character, setting, or scene and get an illustration saved to your project.
+`/image` generates images using Venice's Nano Banana Pro model. Describe a character, setting, or scene and get an illustration saved to your project.
 
 ---
 
@@ -114,8 +107,12 @@ If you have an existing manuscript that needs rewriting:
 
 ```
 private-creative-writing-rig/
-  CLAUDE.md              -- AI personality and behavior
-  .claude/commands/      -- slash command definitions
+  opencode.json          -- AI provider config (Venice + model)
+  OPENCODE.md            -- AI personality and behavior
+  .opencode/
+    commands/            -- slash command definitions
+    agents/              -- sub-agents (analysis, writing)
+    skills/              -- skills (image generation)
   scripts/
     setup.sh             -- one-time setup
     import.js            -- .docx import
@@ -137,7 +134,7 @@ projects/my-novel/
   images/                -- generated images
   outline.md             -- plot structure
   style-guide.md         -- your writing voice (auto-generated or manual)
-  rewrite-plan.md        -- rewrite goals (created by /project:analyze)
+  rewrite-plan.md        -- rewrite goals (created by /analyze)
 ```
 
 ---
@@ -168,7 +165,7 @@ Venice is pay-per-use. The `olafangensan-glm-4.7-flash-heretic` model is extreme
 
 - Your manuscripts are local files that never leave your computer
 - Venice does not train on your data or store your conversations
-- The router runs locally on your machine
+- OpenCode connects directly to Venice -- no middleman, no proxy
 - Your API key is stored in `.env` (gitignored)
 
 ---
@@ -178,7 +175,7 @@ Venice is pay-per-use. The `olafangensan-glm-4.7-flash-heretic` model is extreme
 Open source. MIT license. Contributions welcome.
 
 1. Fork the repo
-2. Edit commands in `.claude/commands/`, scripts in `scripts/`, or templates in `templates/`
+2. Edit commands in `.opencode/commands/`, scripts in `scripts/`, or templates in `templates/`
 3. Submit a pull request
 
 ---

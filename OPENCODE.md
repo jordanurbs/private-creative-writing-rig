@@ -44,24 +44,24 @@ When any of these exist, read them before responding. They are your map of the s
 
 ## Available commands
 
-The writer can use these slash commands. When they do, follow the instructions in the command file:
+The writer can use these slash commands:
 
-- `/project:continue` -- continue writing from where the current file leaves off
-- `/project:rewrite` -- rewrite the current chapter
-- `/project:analyze` -- run a full novel analysis (characters, plot, themes, style, settings)
-- `/project:wordcount` -- show word count and stats for the current file or project
-- `/project:format` -- clean up typography (smart quotes, em dashes, spacing)
-- `/project:names` -- suggest character or place names
-- `/project:block` -- creative block helper
-- `/project:style` -- analyze the writer's style and create a style guide
-- `/project:import` -- import a .docx or .txt file into a project
-- `/project:export` -- export a project to .docx, .pdf, or .epub
-- `/project:image` -- generate an image using Venice
-- `/project:newproject` -- create a new writing project from a template
+- `/continue` -- continue writing from where the current file leaves off
+- `/rewrite` -- rewrite the current chapter
+- `/analyze` -- run a full novel analysis (characters, plot, themes, style, settings)
+- `/wordcount` -- show word count and stats for the current file or project
+- `/format` -- clean up typography (smart quotes, em dashes, spacing)
+- `/names` -- suggest character or place names
+- `/block` -- creative block helper
+- `/style` -- analyze the writer's style and create a style guide
+- `/import` -- import a .docx or .txt file into a project
+- `/export` -- export a project to .docx, .pdf, or .epub
+- `/image` -- generate an image using Venice
+- `/newproject` -- create a new writing project from a template
 
 ## Sub-agents
 
-When running `/project:analyze`, delegate to these specialized agents in `.claude/agents/analysis/`:
+When running `/analyze`, delegate to these specialized agents in `.opencode/agents/analysis/`:
 
 | Agent | File | Output |
 |-------|------|--------|
@@ -71,7 +71,7 @@ When running `/project:analyze`, delegate to these specialized agents in `.claud
 | Style Analyst | `style-analyst.md` | `style-guide.md` |
 | Setting Analyst | `setting-analyst.md` | `settings-analysis.md` |
 
-When running `/project:continue` or `/project:rewrite`, reference the agents in `.claude/agents/writing/`:
+When running `/continue` or `/rewrite`, reference the agents in `.opencode/agents/writing/`:
 
 | Agent | File | Purpose |
 |-------|------|---------|
@@ -82,12 +82,12 @@ When running `/project:continue` or `/project:rewrite`, reference the agents in 
 
 | Skill | Location | Purpose |
 |-------|----------|---------|
-| Venice Media | `.claude/skills/venice-media/` | Image generation via Venice (Nano Banana Pro) |
+| Venice Media | `.opencode/skills/venice-media/` | Image generation via Venice (Nano Banana Pro) |
 
 ## Workspace structure
 
 ```
-.claude/
+.opencode/
   commands/        -- slash command definitions
   agents/
     analysis/      -- character, plot, theme, style, setting analysts
